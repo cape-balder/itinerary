@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 import { rootReducer } from 'fast-redux'
 import * as serviceWorker from './serviceWorker'
+import { DEFAULT_LOCATION } from './assets/data'
 import './index.css'
 
 // import App from './containers/App'
@@ -13,15 +14,7 @@ import App from './App'
 
 const preloadedState = {
   locations: {
-    marker: {
-      from: 'KOHLIFE.COM',
-      fromTerminal: {
-        coordinate: {
-          lat: '13.740596',
-          lng: '100.562926'
-        }
-      }
-    }
+    marker: DEFAULT_LOCATION
   }
 }
 const store = createStore(

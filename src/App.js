@@ -4,7 +4,7 @@ import Map from './components/Map'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { updateMaker } from './stores/Locations'
-import { data } from './assets/data'
+import { LOCATION_DATAS, MRT_BLUE } from './assets/data'
 
 const Container = styled.div`
   position: absolute;
@@ -36,12 +36,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Map height="768px" width="100%" zoom="6" disableUI markerable />
+          <Map height="768px" width="100%" disableUI markerable />
         </header>
         <Container>
-          {data.map(place => (
+          {LOCATION_DATAS.map(place => (
             <Link onClick={() => this.handleClick(place)}>{place.from}</Link>
           ))}
+          <Link onClick={() => this.handleClick(MRT_BLUE)}>MRT_BLUE_LINE</Link>
         </Container>
       </div>
     )

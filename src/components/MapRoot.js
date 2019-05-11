@@ -70,16 +70,17 @@ const MapComponent = compose(
     fromLocation,
     toLocation,
     zoom,
+    info,
     mapType,
     disableUI,
     mapStyling,
     onToggleOpen
   }) => (
     <GoogleMap
-      defaultZoom={checkZoom(zoom, 9)}
+      defaultZoom={checkZoom(zoom, 7)}
       defaultCenter={collecCenter(location)}
       center={collecCenter(location)}
-      zoom={zoomCalc(location)}
+      zoom={zoom}
       mapTypeId={checkNull(mapType, 'roadmap')}
       //options={disableUI && { disableDefaultUI: true }}
       defaultOptions={{
@@ -104,23 +105,25 @@ const MapComponent = compose(
               }
             }
           >
-            <InfoWindow>
-              <div className="_description">
-                {index === 0 ? (
-                  <span>
-                    {/* <span style={{ fontSize: '20px' }}>⛵</span> */}
-                    <span style={{ fontSize: '13px' }}>From:</span>
-                    <MapText>{fromLocation}</MapText>
-                  </span>
-                ) : (
-                  <span>
-                    {/* <span style={{ fontSize: '20px' }}>🏝</span> */}
-                    <span style={{ fontSize: '13px' }}>To:</span>
-                    <MapText>{toLocation}</MapText>
-                  </span>
-                )}
-              </div>
-            </InfoWindow>
+            {info && (
+              <InfoWindow>
+                <div className="_description">
+                  {index === 0 ? (
+                    <span>
+                      {/* <span style={{ fontSize: '20px' }}>⛵</span> */}
+                      <span style={{ fontSize: '13px' }}>From:</span>
+                      <MapText>{fromLocation}</MapText>
+                    </span>
+                  ) : (
+                    <span>
+                      {/* <span style={{ fontSize: '20px' }}>🏝</span> */}
+                      <span style={{ fontSize: '13px' }}>To:</span>
+                      <MapText>{toLocation}</MapText>
+                    </span>
+                  )}
+                </div>
+              </InfoWindow>
+            )}
           </Marker>
         ))}
       {markerable && !noPath && (
