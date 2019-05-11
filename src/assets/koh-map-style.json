@@ -1,0 +1,9 @@
+[
+  { "stylers": [{ "hue": "#ffc800" }, { "saturation": 94 }] },
+  { "featureType": "water", "stylers": [{ "color": "#ffffff" }] },
+  {
+    "featureType": "administrative.country",
+    "elementType": "labels",
+    "stylers": [{ "visibility": "off" }]
+  }
+]
