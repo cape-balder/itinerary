@@ -14,7 +14,7 @@ import App from './App'
 const preloadedState = {
   locations: {
     marker: {
-      from: 'Neo4Map',
+      from: 'KOHLIFE.COM',
       fromTerminal: {
         coordinate: {
           lat: '13.740596',

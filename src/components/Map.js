@@ -6,13 +6,7 @@ import { connect } from 'react-redux'
 import { updateMaker } from '../stores/Locations'
 
 class Map extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(
-      updateMaker({
-        from: 'KOHLIFE.COM'
-      })
-    )
-  }
+  componentDidMount() {}
   render() {
     const {
       zoom,
