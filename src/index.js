@@ -1,12 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunkMiddleware from 'redux-thunk'
+import { rootReducer } from 'fast-redux'
+import * as serviceWorker from './serviceWorker'
+import './index.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// import App from './containers/App'
+import App from './App'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const preloadedState = {
+  locations: {
+    marker: {
+      from: 'Neo4Map',
+      fromTerminal: {
+        coordinate: {
+          lat: '13.740596',
+          lng: '100.562926'
+        }
+      }
+    }
+  }
+}
+const store = createStore(
+  rootReducer,
+  preloadedState,
+  composeWithDevTools(applyMiddleware(thunkMiddleware))
+)
+serviceWorker.unregister()
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
