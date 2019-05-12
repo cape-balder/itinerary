@@ -2,6 +2,7 @@ export const SARL_TRANSIT_MAKKASAN_COLOR = { sralTransitMakkasan: '#ed3900' }
 export const SARL_TRANSIT_MAKKASAN = {
   SARL_TRANSIT_MAKKASAN: {
     from: 'SARL TRANSIT MAKKASAN',
+    bg: '#ed3900',
     type: 'connected-line',
     coordinate: [
       {

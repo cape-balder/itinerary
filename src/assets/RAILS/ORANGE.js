@@ -2,6 +2,7 @@ export const MRT_ORANGE_COLOR = { orange: '#f67319' }
 export const MRT_ORANGE = {
   MRT_ORANGE: {
     from: 'MRT ORANGE',
+    bg: '#f67319',
     type: 'connected-line',
     coordinate: [
       {

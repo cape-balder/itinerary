@@ -2,6 +2,7 @@ export const MRT_CYAN_COLOR = { cyan: '#6ACDFC' }
 export const MRT_CYAN = {
   MRT_CYAN: {
     from: 'MRT CYAN',
+    bg: '#6ACDFC',
     type: 'connected-line',
     coordinate: [
       {

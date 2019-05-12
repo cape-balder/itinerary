@@ -2,6 +2,7 @@ export const MRT_GREY_COLOR = { grey: '#948B8B' }
 export const MRT_GREY = {
   MRT_GREY: {
     from: 'MRT GREY',
+    bg: '#948B8B',
     type: 'connected-line',
     coordinate: [
       {

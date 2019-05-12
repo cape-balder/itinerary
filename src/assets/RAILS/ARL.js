@@ -2,6 +2,7 @@ export const MRT_ARL_COLOR = { arl: '#ed3900' }
 export const MRT_ARL = {
   MRT_ARL: {
     from: 'MRT ARL',
+    bg: '#ed3900',
     type: 'connected-line',
     coordinate: [
       {

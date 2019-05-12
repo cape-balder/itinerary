@@ -2,6 +2,7 @@ export const MRT_YELLOW_COLOR = { yellow: '#FFC800' }
 export const MRT_YELLOW = {
   MRT_YELLOW: {
     from: 'MRT YELLOW',
+    bg: '#FFC800',
     type: 'connected-line',
     coordinate: [
       {

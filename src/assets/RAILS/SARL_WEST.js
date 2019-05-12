@@ -2,6 +2,7 @@ export const SARL_WEST_COLOR = { sralWest: '#ed3900' }
 export const SARL_WEST = {
   SARL_WEST: {
     from: 'SARL WEST',
+    bg: '#ed3900',
     type: 'connected-line',
     coordinate: [
       {

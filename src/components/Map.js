@@ -3,6 +3,7 @@ import MapCell from './MapRoot'
 import styled from 'styled-components'
 import { latLongFinder } from '../method/LatLongFinder'
 import { connect } from 'react-redux'
+import { Color } from './Element/Identity'
 import { updateMaker } from '../stores/Locations'
 
 class Map extends React.Component {
@@ -48,6 +49,9 @@ class Map extends React.Component {
           mapStyling={mapStyling}
           noPath={noPath}
           info={collections.type !== 'connected-line'}
+          pathColor={
+            collections.bg !== undefined ? collections.bg : Color.secondary
+          }
           containerElement={
             <div style={{ height: `${height}`, width: `${width}` }} />
           }

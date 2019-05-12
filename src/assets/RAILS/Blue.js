@@ -3,6 +3,7 @@ export const MRT_BLUE = {
   MRT_BLUE: {
     from: 'MRT BLUE',
     type: 'connected-line',
+    bg: '#133b8e',
     coordinate: [
       {
         lat: 13.729362246537612,

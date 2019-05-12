@@ -2,6 +2,7 @@ export const MRT_PINK_COLOR = { pink: '#ff9690' }
 export const MRT_PINK = {
   MRT_PINK: {
     from: 'MRT PINK',
+    bg: '#ff9690',
     type: 'connected-line',
     coordinate: [
       {

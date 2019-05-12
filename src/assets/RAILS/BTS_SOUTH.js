@@ -2,6 +2,7 @@ export const BTS_SOUTH_COLOR = { btsSouth: '#008e00' }
 export const BTS_SOUTH = {
   BTS_SOUTH: {
     from: 'BTS SOUTH',
+    bg: '#008e00',
     type: 'connected-line',
     coordinate: [
       {

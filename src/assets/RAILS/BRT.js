@@ -2,6 +2,7 @@ export const BRT_COLOR = { brt: '#6ACD39' }
 export const BRT = {
   BRT: {
     from: 'BRT',
+    bg: '#6ACD39',
     type: 'connected-line',
     coordinate: [
       {

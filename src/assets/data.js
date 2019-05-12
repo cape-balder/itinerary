@@ -44,13 +44,13 @@ export const BTSLocationSet = {
     ...BTS_EAST_COLOR
   },
   marker: {
-    ...MRT_BLUE,
-    ...MRT_ARL,
-    ...MRT_BROWN,
-    ...BRT,
     ...BTS_NORTH,
     ...BTS_SOUTH,
     ...BTS_EAST,
+    ...BRT,
+    ...MRT_BLUE,
+    ...MRT_ARL,
+    ...MRT_BROWN,
     ...MRT_PURPLE,
     ...MRT_GREY,
     ...MRT_YELLOW,

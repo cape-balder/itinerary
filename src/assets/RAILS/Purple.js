@@ -2,6 +2,7 @@ export const MRT_PURPLE_COLOR = { purple: '#423791' }
 export const MRT_PURPLE = {
   MRT_PURPLE: {
     from: 'MRT PURPLE',
+    bg: '#423791',
     type: 'connected-line',
     coordinate: [
       {

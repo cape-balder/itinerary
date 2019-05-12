@@ -2,6 +2,7 @@ export const SARL_TRANSIT_ORANGE_COLOR = { sralTransitOrange: '#ed3900' }
 export const SARL_TRANSIT_ORANGE = {
   SARL_TRANSIT_ORANGE: {
     from: 'SARL TRANSIT ORANGE',
+    bg: '#ed3900',
     type: 'connected-line',
     coordinate: [
       {

@@ -71,6 +71,7 @@ const MapComponent = compose(
     toLocation,
     zoom,
     info,
+    pathColor,
     mapType,
     disableUI,
     mapStyling,
@@ -88,39 +89,24 @@ const MapComponent = compose(
         disableDefaultUI: disableUI && true
       }}
     >
-      {/* {console.log(location)} */}
       {markerable &&
         location.map((key, index) => (
           <Marker
             key={index}
             position={{ lat: key.lat, lng: key.lng }}
-            icon={
-              index === 0 && {
-                path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
-                fillColor: '#FFFFFF',
-                fillOpacity: 1,
-                strokeWeight: 6,
-                strokeColor: '#EA4335',
-                scale: 0.4
-              }
-            }
+            icon={{
+              path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
+              fillColor: '#FFFFFF',
+              fillOpacity: 1,
+              strokeWeight: 4,
+              strokeColor: pathColor,
+              scale: 0.3
+            }}
           >
             {info && (
               <InfoWindow>
                 <div className="_description">
-                  {index === 0 ? (
-                    <span>
-                      {/* <span style={{ fontSize: '20px' }}>⛵</span> */}
-                      <span style={{ fontSize: '13px' }}>From:</span>
-                      <MapText>{fromLocation}</MapText>
-                    </span>
-                  ) : (
-                    <span>
-                      {/* <span style={{ fontSize: '20px' }}>🏝</span> */}
-                      <span style={{ fontSize: '13px' }}>To:</span>
-                      <MapText>{toLocation}</MapText>
-                    </span>
-                  )}
+                  <MapText>{fromLocation}</MapText>
                 </div>
               </InfoWindow>
             )}
@@ -131,7 +117,7 @@ const MapComponent = compose(
           path={location}
           geodesic={true}
           options={{
-            strokeColor: Color.secondary,
+            strokeColor: pathColor,
             strokeWeight: 3
           }}
         />
