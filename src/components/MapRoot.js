@@ -13,6 +13,7 @@ import {
 } from 'react-google-maps'
 
 // CONFIG
+// Chan แก้ API_KEY
 const API_KEY = 'AIzaSyABQ_VlKDqdqHUcOKKRIkMvNljwWDUIzMc'
 const LIBRARY = 'geometry,drawing,places'
 
@@ -94,6 +95,8 @@ const MapComponent = compose(
           <Marker
             key={index}
             position={{ lat: key.lat, lng: key.lng }}
+            //Chan  สามารถใส่ onclick={()=>alert('abc')} 
+            onclick={() => alert(key.name)}
             icon={{
               path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
               fillColor: '#FFFFFF',

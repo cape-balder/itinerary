@@ -93,20 +93,31 @@ const Link = styled.a`
 class App extends React.Component {
   constructor(props) {
     super(props)
+    // ถ้าไม่ bind จะ render รัวๆ
     this.handleClick = this.handleClick.bind(this)
   }
+  // Chan
+  // dispatch เข้ามาตอน connect
   handleClick(e) {
     this.props.dispatch(updateMaker(e))
   }
+
+  // Chan
+  // ComponentDid* --> อยู่ใน react life cycle
+  // Didmount runt ก่อน render
   componentDidMount() {}
+  // render จะดักฟังว่า prop มีการเปลี่ยนแปลง เมื่อ prop เปลี่ยนก็จะ rerender
   render() {
     const BTS_MAP = Object.keys(BTSLocationSet.marker)
     const { collections } = this.props
     return (
       <div className="App">
         <header className="App-header">
+        {/* connect กะ redux อยู่แล้ว เลยไม่ใช้ clooections */}
           <Map height="768px" width="100%" disableUI markerable />
         </header>
+        {/* // Chan */}
+        {/* // Trigger */}
         {collections.type === 'connected-line' && (
           <Describe>
             <div className="_pad">
@@ -148,10 +159,12 @@ class App extends React.Component {
           ))} */}
           <div className="_rails-container">
             {BTS_MAP.map(key => {
+              // marker คือ value ของ key
               const marker = BTSLocationSet.marker[key]
               return (
                 <Link
                   className={marker.from === collections.from ? '_active' : ''}
+                  // ถ้าใส่ onClick={this.handleClick} จะ render รัวๆ
                   onClick={() => this.handleClick(marker)}
                 >
                   {marker.from}

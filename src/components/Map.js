@@ -6,6 +6,13 @@ import { connect } from 'react-redux'
 import { Color } from './Element/Identity'
 import { updateMaker } from '../stores/Locations'
 
+//Chan
+//// Stateful
+// ใช้ life cycle ได้
+//// Stateless
+// ใช้อันนี้แทน ถ้า connect กะ srore
+// จริงๆสามารถ modify ให้ map เป็น stateless ได้
+
 class Map extends React.Component {
   componentDidMount() {}
   render() {
@@ -38,6 +45,7 @@ class Map extends React.Component {
     `
     return (
       <MapContainer>
+        {/*Chan เป็ฯ third party */}
         <MapCell
           location={location.coordinate}
           fromLocation={location.from}
