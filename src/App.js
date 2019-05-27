@@ -7,6 +7,8 @@ import { updateMaker } from './stores/Locations'
 import { LOCATION_DATAS, BTSLocationSet } from './assets/data'
 import { measure, measureTotal } from './method/MeasureDistance'
 
+import { Describe } from './styles/Describe'
+
 const Container = styled.div`
   position: absolute;
   display: flex;
@@ -35,42 +37,6 @@ const Container = styled.div`
   }
 `
 
-const Describe = styled.div`
-  position: absolute;
-  top: 10vh;
-  right: 2vw;
-  height: 70vh;
-  width: 280px;
-  background: white;
-  z-index: 2;
-  border-radius: 7px;
-  text-align: left;
-  overflow-y: scroll;
-  ._pad {
-    padding: 20px;
-  }
-  h3 {
-    margin: 0;
-    font-size: 15px;
-  }
-  h1 {
-    margin: 0;
-    font-size: 22px;
-    ._blog-color {
-      width: 20px;
-      height: 20px;
-      margin-right: 2px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-  ul {
-    margin-top: 8px;
-    padding-left: 22px;
-    li {
-    }
-  }
-`
 const Link = styled.a`
   z-index: 3;
   background: white;
@@ -119,29 +85,7 @@ class App extends React.Component {
         {/* // Chan */}
         {/* // Trigger */}
         {collections.type === 'connected-line' && (
-          <Describe>
-            <div className="_pad">
-              <h1>
-                <span
-                  className="_blog-color"
-                  style={{ background: collections.bg }}
-                />{' '}
-                {collections.from}
-              </h1>
-              <div style={{ marginTop: '7px' }}>
-                <h3>รวมทั้งหมด {collections.coordinate.length}สถานี</h3>
-                <h3>
-                  ระยะทางประมาณ {measureTotal(collections.coordinate)} กม.
-                </h3>
-              </div>
-
-              <ul>
-                {collections.coordinate.map(mark => (
-                  <li>{mark.name}</li>
-                ))}
-              </ul>
-            </div>
-          </Describe>
+          <Describe collections={collections}/>
         )}
         <Container>
           <div className="_transit-tag">
