@@ -14,13 +14,6 @@ import LinkList from './styles/LinkList'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    // ถ้าไม่ bind จะ render รัวๆ
-    this.handleClick = this.handleClick.bind(this)
-  }
-  // Chan
-  // dispatch เข้ามาตอน connect
-  handleClick(e) {
-    this.props.dispatch(updateMaker(e))
   }
 
   // Chan
@@ -29,7 +22,6 @@ class App extends React.Component {
   componentDidMount() {}
   // render จะดักฟังว่า prop มีการเปลี่ยนแปลง เมื่อ prop เปลี่ยนก็จะ rerender
   render() {
-    const BTS_MAP = Object.keys(BTSLocationSet.marker)
     const { collections } = this.props
     return (
       <div className="App">

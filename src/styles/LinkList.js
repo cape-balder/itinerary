@@ -2,9 +2,20 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { BTSLocationSet } from '../assets/data'
 import { Link } from './Link'
+import { updateMaker } from '../stores/Locations'
 
 class LinkList extends React.Component {
+  constructor(props){
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(e) {
+    this.props.dispatch(updateMaker(e))
+  }
+
   componentDidMount() {}
+
   render() {
     const BTS_MAP = Object.keys(BTSLocationSet.marker)
     const { collections } = this.props
@@ -14,7 +25,7 @@ class LinkList extends React.Component {
                 const marker = BTSLocationSet.marker[key]
                 return (
                 <Link label={marker.from} isActive={marker.from === collections.from} 
-                    //onClick = {() => this.handleClick(marker)} 
+                    onClick = {() => this.handleClick(marker)} 
                     />
                 )
            });
