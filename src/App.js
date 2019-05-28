@@ -8,53 +8,8 @@ import { LOCATION_DATAS, BTSLocationSet } from './assets/data'
 import { measure, measureTotal } from './method/MeasureDistance'
 
 import { Describe } from './styles/Describe'
-
-const Container = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  z-index: 2;
-  width: 100%;
-  background: #3c3c3c94;
-  padding: 20px 0 12px;
-  height: 10vh;
-  ._rails-container {
-    ${'' /* border-left: 3px solid white; */};
-    max-width: 840px;
-    margin-left: 16px;
-  }
-  ._transit-tag {
-    color: #ffc800;
-    font-size: 19px;
-    font-weight: 700;
-    span {
-      margin-top: -2px;
-      display: inline-block;
-      font-size: 36px;
-    }
-  }
-`
-
-const Link = styled.a`
-  z-index: 3;
-  background: white;
-  padding: 6px 10px;
-  border-radius: 13px;
-  margin: 0 2px;
-  cursor: pointer;
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: 11px;
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 7px grey;
-  }
-  &._active {
-    background: #ffc800;
-  }
-`
+import { Container } from './styles/Container'
+import { Link } from './styles/Link'
 
 class App extends React.Component {
   constructor(props) {
@@ -93,26 +48,13 @@ class App extends React.Component {
             <br />
             <span>2030</span>
           </div>
-          {/* {LOCATION_DATAS.map(place => (
-            <Link
-              className={place.from === collections.from ? '_active' : ''}
-              onClick={() => this.handleClick(place)}
-            >
-              {place.from}
-            </Link>
-          ))} */}
           <div className="_rails-container">
             {BTS_MAP.map(key => {
               // marker คือ value ของ key
               const marker = BTSLocationSet.marker[key]
               return (
-                <Link
-                  className={marker.from === collections.from ? '_active' : ''}
-                  // ถ้าใส่ onClick={this.handleClick} จะ render รัวๆ
-                  onClick={() => this.handleClick(marker)}
-                >
-                  {marker.from}
-                </Link>
+                <Link label={marker.from} isActive={marker.from === collections.from} 
+                  onClick = {() => this.handleClick(marker)} />
               )
             })}
           </div>

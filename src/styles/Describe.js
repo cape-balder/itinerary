@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { measureTotal } from '../method/MeasureDistance'
 
-const DescribeWithStyle = styled.div`
+const DescribeStyle = styled.div`
 position: absolute;
 top: 10vh;
 right: 2vw;
@@ -42,7 +42,7 @@ ul {
 export const Describe = (props) =>
 {
     return (
-        <DescribeWithStyle>
+        <DescribeStyle>
             <div className="_pad">
             <h1>
                 <span
@@ -64,6 +64,6 @@ export const Describe = (props) =>
                 ))}
             </ul>
             </div>
-        </DescribeWithStyle>
+        </DescribeStyle>
     );
 }
