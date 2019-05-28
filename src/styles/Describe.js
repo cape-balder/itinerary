@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { measureTotal } from '../method/MeasureDistance'
+import { connect } from 'react-redux'
 
 const DescribeStyle = styled.div`
 position: absolute;
@@ -39,7 +40,7 @@ ul {
 }
 `
 
-export const Describe = (props) =>
+const Describe = (props) =>
 {
     return (
         <DescribeStyle>
@@ -67,3 +68,12 @@ export const Describe = (props) =>
         </DescribeStyle>
     );
 }
+
+function mapStateToProps(state) {
+  return {
+    collections: state.locations.marker
+  }
+}
+
+// export default Map
+export default connect(mapStateToProps)(Describe)
