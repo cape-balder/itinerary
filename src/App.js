@@ -9,8 +9,7 @@ import { measure, measureTotal } from './method/MeasureDistance'
 
 import { Describe } from './styles/Describe'
 import { Container } from './styles/Container'
-import { Link } from './styles/Link'
-import LinkList from './styles/LinkListOld'
+import LinkList from './styles/LinkList'
 
 class App extends React.Component {
   constructor(props) {

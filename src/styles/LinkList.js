@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { BTSLocationSet } from '../assets/data'
-import { Link } from '../styles/Link'
+import { Link } from './Link'
 
 class LinkList extends React.Component {
   componentDidMount() {}
