@@ -10,6 +10,7 @@ import { measure, measureTotal } from './method/MeasureDistance'
 import { Describe } from './styles/Describe'
 import { Container } from './styles/Container'
 import { Link } from './styles/Link'
+import LinkList from './styles/LinkListOld'
 
 class App extends React.Component {
   constructor(props) {
@@ -49,14 +50,7 @@ class App extends React.Component {
             <span>2030</span>
           </div>
           <div className="_rails-container">
-            {BTS_MAP.map(key => {
-              // marker คือ value ของ key
-              const marker = BTSLocationSet.marker[key]
-              return (
-                <Link label={marker.from} isActive={marker.from === collections.from} 
-                  onClick = {() => this.handleClick(marker)} />
-              )
-            })}
+            <LinkList/>
           </div>
         </Container>
       </div>
