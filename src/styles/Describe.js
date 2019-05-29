@@ -39,10 +39,14 @@ ul {
   }
 }
 `
+//{collections.type === 'connected-line' && (
+//  ลองมาทำแบบใน react admin ดู ที่ ตรง RouteCreate 
 
 const Describe = (props) =>
 {
-    return (
+    const toShow = props.collections.type === 'connected-line';
+
+    return toShow ? (
         <DescribeStyle>
             <div className="_pad">
             <h1>
@@ -66,7 +70,7 @@ const Describe = (props) =>
             </ul>
             </div>
         </DescribeStyle>
-    );
+    ) : null ;
 }
 
 function mapStateToProps(state) {

@@ -22,7 +22,6 @@ class App extends React.Component {
   componentDidMount() {}
   // render จะดักฟังว่า prop มีการเปลี่ยนแปลง เมื่อ prop เปลี่ยนก็จะ rerender
   render() {
-    const { collections } = this.props
     return (
       <div className="App">
         <header className="App-header">
@@ -31,9 +30,7 @@ class App extends React.Component {
         </header>
         {/* // Chan */}
         {/* // Trigger */}
-        {collections.type === 'connected-line' && (
-          <Describe collections={collections}/>
-        )}
+        <Describe/>   
         <Container>
           <div className="_transit-tag">
             BANGKOK
@@ -49,9 +46,4 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    collections: state.locations.marker
-  }
-}
-export default connect(mapStateToProps)(App)
+export default App
