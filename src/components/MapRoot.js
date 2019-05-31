@@ -14,7 +14,8 @@ import {
 
 // CONFIG
 // Chan แก้ API_KEY
-const API_KEY = 'AIzaSyABQ_VlKDqdqHUcOKKRIkMvNljwWDUIzMc'
+//const API_KEY = 'AIzaSyABQ_VlKDqdqHUcOKKRIkMvNljwWDUIzMc'
+const API_KEY = 'AIzaSyCrM3ftSFq2m5KhiAjlKvnfnpcbeOzkNpc'
 const LIBRARY = 'geometry,drawing,places'
 
 export const MapText = styled.span`

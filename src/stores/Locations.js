@@ -7,5 +7,5 @@ const { action } = namespaceConfig('locations', {})
 // ตั้งชื่อ update/marker
 
 export const updateMaker = action('update/marker', (state, data) => {
-  return { ...state, ...{ marker: { ...state.marker, ...data } } }
+  return { ...state, ...{ data: { ...state.data, ...data } } }
 })
