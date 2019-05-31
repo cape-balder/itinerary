@@ -15,7 +15,11 @@ import App from './App'
 const preloadedState = {
   locations: {
     marker: DEFAULT_LOCATION
-  }
+  },
+  BTSLocationSet: {
+    routeData: null,
+    colorData: null
+  }	  
 }
 const store = createStore(
   rootReducer,
