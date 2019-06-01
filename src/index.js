@@ -17,8 +17,7 @@ const preloadedState = {
     marker: DEFAULT_LOCATION
   },
   BTSLocationSet: {
-    routeData: null,
-    colorData: null
+    routeData: null
   }	  
 }
 const store = createStore(

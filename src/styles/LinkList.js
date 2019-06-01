@@ -1,13 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BTSLocationSet } from '../assets/data'
 import { Link } from './Link'
 import { updateMaker } from '../stores/Locations'
 
 import axios from 'axios'
 import { fetchData } from '../stores/BTSLocationSet'
-
-
 
 
 class LinkList extends React.Component {

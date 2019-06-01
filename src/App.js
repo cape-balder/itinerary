@@ -1,11 +1,7 @@
 import React from 'react'
 import './App.css'
 import Map from './components/Map'
-import { connect } from 'react-redux'
-import styled from 'styled-components'
-import { updateMaker } from './stores/Locations'
-import { LOCATION_DATAS, BTSLocationSet } from './assets/data'
-import { measure, measureTotal } from './method/MeasureDistance'
+
 
 import Describe from './styles/Describe'
 import { Container } from './styles/Container'
